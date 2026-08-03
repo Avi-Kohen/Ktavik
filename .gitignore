@@ -1,0 +1,90 @@
+# ---------------------------------------------------------------------------
+# Anything committed here lives in git history forever. `git rm` does not undo
+# it — only rewriting history does, and that breaks every existing clone. So
+# this file is written before the first code commit, not after.
+# ---------------------------------------------------------------------------
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments — reconstructed from uv.lock, never committed
+.venv/
+venv/
+ENV/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Data: tracked by DVC, not by git.
+#
+# You cannot re-include a file inside an ignored *directory* — git never
+# descends into it. So ignore the contents, then re-include the directories
+# themselves, and finally the .dvc pointer files, which DO belong in git:
+# they are the versioned reference to the data, a few hundred bytes each.
+# ---------------------------------------------------------------------------
+/data/**
+!/data/**/
+!/data/**/*.dvc
+!/data/**/.gitignore
+
+# Model weights and exports
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.tflite
+*.h5
+*.pkl
+
+# Experiment tracking — local run output, not source
+mlruns/
+wandb/
+lightning_logs/
+outputs/
+runs/
+
+# Secrets — never commit; commit the example instead
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+service-account*.json
+
+# Editors
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Android (Phase 5)
+*.apk
+*.aab
+*.ap_
+*.dex
+.gradle/
+.cxx/
+local.properties
+captures/
