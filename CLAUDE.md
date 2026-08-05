@@ -20,7 +20,8 @@ derivable from the code or the git history.
 | Phase | 0 — foundations and infrastructure (in progress) |
 | Started | August 2026 |
 | Repo | https://github.com/avi-kohen/Ktavik · public · Apache 2.0 |
-| First showable milestone | End of Phase 3 (~January 2027) |
+| First showable milestone | Vertical skeleton, Phase 2.5 (~November 2026) |
+| Impressive milestone | End of Phase 3 (~February 2027) |
 
 > Keep this table current. It is the fastest way for a new session to know where things stand.
 
@@ -121,6 +122,15 @@ Each gets its own ADR under `docs/adr/`. Recorded here so a fresh session does n
   at an excavation site, and it demonstrates a real latency/accuracy/availability trade-off.
 - **Unicode:** glyphs are encoded in the Phoenician block, U+10900–U+1091F. Unicode treats
   Paleo-Hebrew and Phoenician as the same script.
+- **Vertical skeleton after Phase 2, not before.** No off-the-shelf Paleo-Hebrew OCR exists — the
+  available Hebrew models are square-script Ashuri, a different sign system that returns noise on
+  this material. So there is nothing to "start with and swap out later"; a skeleton built before
+  Phase 2 would wrap a placeholder. Phase 2 produces a small but real glyph classifier, and the
+  skeleton wraps that. It retires integration risk before Phase 3 rather than after, and it puts
+  something runnable on screen at ~month 3.5, which is the counter-measure to the burnout risk.
+- **Measure the incumbents in Phase 2.** Run Tesseract and Google Vision against the real truth set
+  and record how badly they do. One number in the README separating the state of the art from
+  Ktavik turns the project from an exercise into a demonstrated need.
 
 ---
 
