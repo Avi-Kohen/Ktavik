@@ -99,3 +99,6 @@ desktop.ini
 .cxx/
 local.properties
 captures/
+
+# Claude Code — local overrides
+.claude/settings.local.json
