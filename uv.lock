@@ -1,0 +1,29 @@
+version = 1
+revision = 3
+requires-python = ">=3.13"
+
+[manifest]
+members = [
+    "ktavik",
+    "ktavik-synth",
+]
+
+[[package]]
+name = "ktavik"
+version = "0.1.0"
+source = { virtual = "." }
+
+[package.dev-dependencies]
+dev = [
+    { name = "ktavik-synth" },
+]
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+dev = [{ name = "ktavik-synth", editable = "packages/synth" }]
+
+[[package]]
+name = "ktavik-synth"
+version = "0.1.0"
+source = { editable = "packages/synth" }
