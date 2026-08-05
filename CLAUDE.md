@@ -136,11 +136,17 @@ Each gets its own ADR under `docs/adr/`. Recorded here so a fresh session does n
 - **Measure before optimizing.** Never claim an improvement without a number before and after.
 - Tooling: `uv`, `ruff`, `mypy`, `pytest`, pre-commit, GitHub Actions.
 
-### Windows note
+### Windows note — line endings (settled)
 
-Development is on Windows. `core.autocrlf` is unset and there is no `.gitattributes`, so files can
-show as fully modified when only line endings differ. Fix this in Phase 0 with a `.gitattributes`
-(`* text=auto eol=lf`) before the repo accumulates history.
+Development is on Windows, where the Git installer sets `core.autocrlf=true` at **system** scope.
+That is a per-machine setting: it does not travel with the repository, so a second machine or a
+contributor silently gets different behaviour, and files show as fully modified when only the line
+endings differ.
+
+`.gitattributes` settles it instead — it is committed, and its attributes override `core.autocrlf`.
+Do not "fix" this by changing git config on a machine; that is the trap the attributes file exists
+to close. To verify on any new machine, `git check-attr text eol -- <file>` must report
+`text: auto` and `eol: lf`.
 
 ---
 
@@ -161,6 +167,17 @@ asks.
 
 His background is Python plus basic ML, with no production experience, and only passing familiarity
 with Android. Explain ML-engineering and MLOps concepts as they come up rather than assuming them.
+
+### Language and formatting of replies
+
+Replies to Avi are in Hebrew, and they render in a terminal — where mixing right-to-left and
+left-to-right text on one line reorders the line and makes it unreadable. So:
+
+- **Never mix Hebrew and Latin script on the same line.** Technical terms, file paths, identifiers,
+  commands and library names go on a line of their own, or in a list item — never embedded inside a
+  running Hebrew sentence.
+- **Prefer blocks, lists and tables to prose** whenever the content is mixed-language. A table with
+  a Hebrew column and a Latin column is readable; the same content as a paragraph is not.
 
 ---
 

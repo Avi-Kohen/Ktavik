@@ -74,6 +74,17 @@ service-account*.json
 *.iml
 *.swp
 
+# Claude Code
+#
+# Only the *local* settings file is personal (per-developer permissions, machine paths).
+# `.claude/settings.json` is shared project configuration and belongs in git once it exists —
+# so ignore the one file, never the whole `.claude/` directory.
+#
+# This duplicates a rule that already sits in a global ignore file on Avi's machine. That is
+# deliberate: a global ignore is per-machine and does not travel with the repo, exactly like
+# `core.autocrlf`. Same reasoning as `.gitattributes`.
+.claude/settings.local.json
+
 # Operating system
 .DS_Store
 Thumbs.db
