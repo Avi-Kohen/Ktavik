@@ -1,0 +1,18 @@
+[project]
+name = "ktavik"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ktavik-synth",
+]
+
+[tool.uv.sources]
+ktavik-synth = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+    "packages/synth",
+]
