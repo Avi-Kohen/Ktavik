@@ -22,8 +22,24 @@ derivable from the code or the git history.
 | Repo | https://github.com/avi-kohen/Ktavik · public · Apache 2.0 |
 | First showable milestone | Vertical skeleton, Phase 2.5 (~November 2026) |
 | Impressive milestone | End of Phase 3 (~February 2027) |
+| **Last completed** | ADRs 0001 and 0002 merged. README merged into `main` (squash, `ff3cb08`). |
+| **Next step** | The last open Phase 0 item: the documentation site. Phase 0 closes with it. |
+| **Updated** | 2026-08-14 |
 
 > Keep this table current. It is the fastest way for a new session to know where things stand.
+
+### The last three rows are the save point
+
+Avi works from two machines. Nothing carries between them except this repository — not chat
+history, not any local application state. So `Last completed` and `Next step` are the only thing
+standing between "resume in thirty seconds" and "spend the first ten minutes reconstructing where
+we were".
+
+**Update them before leaving a machine, in the same commit as the work itself.** They describe the
+state of the world, exactly like the code does; a commit that changes one without the other is
+incomplete. `Next step` is one sentence and names the *decision or deliverable*, not the command.
+
+Claude: when a step finishes, offer this edit rather than waiting to be asked.
 
 ---
 
