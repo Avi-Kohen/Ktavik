@@ -7,9 +7,9 @@ derivable from the code or the git history.
   time budget. Do not duplicate it here — link to it.
 - **Glossary:** `GLOSSARY_HE.md` (Hebrew, internal). Avi's personal learning glossary, ordered by
   when each concept becomes relevant. When introducing a new term, check whether it belongs there.
-- **Language:** conversations with Avi are in Hebrew. **Everything else committed to this repo is
-  in English** — it is read by employers and contributors. The two Hebrew files above are the
-  deliberate exceptions; both are marked internal.
+- **Language:** conversations with Avi are in English, and so is everything committed to this
+  repo — it is read by employers and contributors. The two Hebrew files above are the deliberate
+  exceptions; both are marked internal.
 
 ---
 
@@ -22,9 +22,9 @@ derivable from the code or the git history.
 | Repo | https://github.com/avi-kohen/Ktavik · public · Apache 2.0 |
 | First showable milestone | Vertical skeleton, Phase 2.5 (~November 2026) |
 | Impressive milestone | End of Phase 3 (~February 2027) |
-| **Last completed** | ADRs 0001 and 0002 merged. README merged into `main` (squash, `ff3cb08`). |
+| **Last completed** | Save-point mechanism merged into `main` (`4c3169b`). Working language switched to English. |
 | **Next step** | The last open Phase 0 item: the documentation site. Phase 0 closes with it. |
-| **Updated** | 2026-08-14 |
+| **Updated** | 2026-08-16 |
 
 > Keep this table current. It is the fastest way for a new session to know where things stand.
 
@@ -220,21 +220,21 @@ Every such pointer is paired with the *why* — why we pin the version at all, w
 not. The command is a means; the reasoning is the thing he has to be able to defend in an interview.
 If he is stuck after a real attempt, narrow the hint rather than jumping to the answer.
 
-### Language and formatting of replies
+### Language of replies
 
-Replies to Avi are in Hebrew, and they render in a terminal — where mixing right-to-left and
-left-to-right text on one line reorders the line and makes it unreadable. So:
+Replies to Avi are in English, as of 2026-08-16.
 
-- **Never mix Hebrew and Latin script on the same line.** Technical terms, file paths, identifiers,
-  commands and library names go on a line of their own, or in a list item — never embedded inside a
-  running Hebrew sentence.
-- **Prefer blocks, lists and tables to prose** whenever the content is mixed-language. A table with
-  a Hebrew column and a Latin column is readable; the same content as a paragraph is not.
-- **Never translate a technical term into Hebrew.** Avi asked for this directly: translations like
-  "מנוע בנייה" for *build backend* or "קובץ נעילה" for *lockfile* confuse him, because the term he
-  will meet in documentation, in error messages and in an interview is the English one. Keep the
-  term in English and put the Hebrew explanation around it — on separate lines, per the rule above.
-  A glossary table with an English column and a Hebrew column is the ideal shape.
+Hebrew was the original choice and was dropped deliberately. Replies rendered in a terminal, where
+mixing right-to-left and left-to-right text on one line reorders it, so the rule was that Hebrew and
+Latin script could never share a line. Every technical term — and they are all English — had to be
+lifted out of the sentence onto a line of its own. The result was stiff, high-register Hebrew that
+read as translated. Clarity is worth more than comfort here.
+
+English is also the language of this repository, of every library's documentation, of every error
+message he will read, and of the interviews this project exists to pass.
+
+`PROJECT_PLAN.md` and `GLOSSARY_HE.md` stay in Hebrew. They are Avi's own documents, both marked
+internal, and rewriting them buys nothing.
 
 ---
 
