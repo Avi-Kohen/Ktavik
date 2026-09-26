@@ -19,6 +19,9 @@ dist/
 venv/
 ENV/
 
+# Documentation site build output
+/site/
+
 # Tooling caches
 .pytest_cache/
 .mypy_cache/
