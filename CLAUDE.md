@@ -17,7 +17,7 @@ derivable from the code or the git history.
 
 | | |
 |---|---|
-| Phase | 0 — foundations and infrastructure (in progress) |
+| Phase | 1 — synthetic data generator (starting) |
 | Started | August 2026 |
 | Repo | https://github.com/avi-kohen/Ktavik · public · Apache 2.0 |
 | First showable milestone | Vertical skeleton, Phase 2.5 (~November 2026) |
