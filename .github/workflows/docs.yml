@@ -1,0 +1,58 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Runs on every pull request as a gate, and again on main as the input to
+  # deployment. Holds no credential that can publish anything.
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/configure-pages@v6
+
+      - uses: astral-sh/setup-uv@v9.0.0
+        with:
+          enable-cache: true
+
+      # --only-group implies --no-default-groups, so the dev toolchain
+      # (mypy, pytest, ruff, pre-commit) is never installed here.
+      - name: Install the docs dependency group
+        run: uv sync --locked --only-group docs
+
+      # --no-sync is required: `uv run` would otherwise re-sync the
+      # environment and reinstate the default groups we just excluded.
+      - name: Build the site
+        run: uv run --no-sync zensical build --clean
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+  # Publishes only from main. Skipped entirely on pull requests, which is what
+  # keeps a fork's PR from being able to deploy.
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v5
