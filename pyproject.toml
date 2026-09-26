@@ -12,6 +12,9 @@ dev = [
     "pytest>=9.1.1",
     "ruff>=0.16.1",
 ]
+docs = [
+    "zensical>=0.0.65",
+]
 
 [tool.uv.sources]
 ktavik-synth = { workspace = true }
