@@ -22,9 +22,9 @@ derivable from the code or the git history.
 | Repo | https://github.com/avi-kohen/Ktavik · public · Apache 2.0 |
 | First showable milestone | Vertical skeleton, Phase 2.5 (~November 2026) |
 | Impressive milestone | End of Phase 3 (~February 2027) |
-| **Last completed** | Save-point mechanism merged into `main` (`4c3169b`). Working language switched to English. |
-| **Next step** | The last open Phase 0 item: the documentation site. Phase 0 closes with it. |
-| **Updated** | 2026-08-16 |
+| **Last completed** | Phase 0 closed. Documentation site on Zensical, deployed from CI; ADR-0003 records the choice. |
+| **Next step** | Phase 1 — the synthetic data generator. Start with font collection and licence review. |
+| **Updated** | 2026-09-26 |
 
 > Keep this table current. It is the fastest way for a new session to know where things stand.
 

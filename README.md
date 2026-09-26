@@ -3,6 +3,8 @@
 Reading Paleo-Hebrew inscriptions from photographs — an OCR system for the ancient
 Hebrew script, and the Android application that puts it in your hand at the dig site.
 
+**Documentation:** <https://avi-kohen.github.io/Ktavik/>
+
 > **Status:** Phase 0 of 6. The engineering foundation is in place; no recognition model
 > exists yet. See [Status](#status) for exactly what runs today.
 
